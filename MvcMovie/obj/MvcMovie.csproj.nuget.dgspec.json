@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj": {}
+    "D:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj": {}
   },
   "projects": {
-    "d:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj": {
+    "D:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj",
+        "projectUniqueName": "D:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "d:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj",
+        "projectPath": "D:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "d:\\NetCoreAPI\\MvcMovie\\obj\\",
+        "outputPath": "D:\\NetCoreAPI\\MvcMovie\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -42,6 +42,32 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SQLite": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
