@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Máy tính đơn giản";
+}
+
+<h2>Máy tính</h2>
+
+<form method="post">
+    <input type="number" name="a" required />
+    <select name="operation">
+        <option value="sum">Tổng</option>
+        <option value="sub">Hiệu</option>
+        <option value="mul">Tích</option>
+        <option value="div">Thương</option>
+    </select>
+    <input type="number" name="b" required />
+    <button type="submit">Tính</button>
+</form>
+
+@if (ViewBag.Result != null)
+{
+    <h3>Kết quả: @ViewBag.Result</h3>
+}
