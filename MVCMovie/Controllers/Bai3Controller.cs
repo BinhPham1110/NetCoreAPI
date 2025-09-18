@@ -1,44 +1,33 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MVCMovie.Models;
 
 namespace MVCMovie.Controllers
 {
-    public class Bai3Controller : Controller
+    public class BMIController : Controller
     {
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult TinhBMI(BMIModel model)
+        public IActionResult Index(double height, double weight)
         {
-            // Tính chỉ số BMI
-            model.ChiSoBMI = model.CanNang / ((model.ChieuCao / 100) * (model.ChieuCao / 100));
+            BMI model = new BMI();
+            model.Height = height;
+            model.Weight = weight;
+            model.Result = weight / (height * height);
 
-            // Đánh giá kết quả
-            if (model.ChiSoBMI < 18.5)
-            {
-                model.KetQua = "Thiếu cân";
-            }
-            else if (model.ChiSoBMI < 25)
-            {
-                model.KetQua = "Bình thường";
-            }
-            else if (model.ChiSoBMI < 30)
-            {
-                model.KetQua = "Thừa cân";
-            }
+            if (model.Result < 18.5)
+                model.Status = "Gầy";
+            else if (model.Result < 24.9)
+                model.Status = "Bình thường";
+            else if (model.Result < 29.9)
+                model.Status = "Thừa cân";
             else
-            {
-                model.KetQua = "Béo phì";
-            }
+                model.Status = "Béo phì";
 
-            // Gửi thông báo về View
-            ViewBag.ThongBao = "Chỉ số BMI của bạn là: " + model.ChiSoBMI + ", " + model.KetQua;
-
-            return View("Index");
+            return View(model);
         }
     }
 }

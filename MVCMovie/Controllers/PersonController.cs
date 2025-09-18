@@ -1,20 +1,16 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MVCMovie.Data;
+using MVCMovie.Models;
+    
 namespace MVCMovie.Controllers
 {
-    using Microsoft.AspNetCore.Mvc;
-    using MVCMovie.Models;
-
     public class PersonController : Controller
     {
-        public IActionResult Index()
+        private readonly ApplicationDbContext _context;
+        public PersonController(ApplicationDbContext context)
         {
-            ViewBag.Message = "Dữ liệu từ controller gửi về view ";
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Index(Person ps)
-        {
-            ViewBag.Message = ps.StudentID + "-" + ps.FullName;
-            return View();
+            _context = context;
         }
     }
 }

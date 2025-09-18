@@ -1,7 +1,10 @@
-<h2>Du Lieu: @ViewBag.Message</h2>
+<h1>Dữ liệu từ Controller gửi về là: @ViewBag.infoPerson</h1>
 <form asp-action="Index">
-    <input type="text" name="StudentID">
+    <label>Nhập PersonID</label>
+    <input type="text" name="PersonID">
+    <label>Nhập họ tên:</label>
     <input type="text" name="FullName">
-    <input type="submit" value="Submit">
-
+    <label>Nhập địa chỉ:</label>
+    <input type="text" name="Address">
+    <input type="submit" value="Gửi dữ liệu">
 </form>
