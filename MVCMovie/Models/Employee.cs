@@ -1,9 +1,17 @@
 using System.ComponentModel.DataAnnotations;
+
 namespace MVCMovie.Models
 {
-    public class Employee : Person
+    public class Employee
     {
-        public string EmployeeId { get; set; }
-        public int Age { get; set; }
+        public int Id { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        public string Position { get; set; }
+
+        [Range(0, 1000000)]
+        public decimal Salary { get; set; }
     }
 }

@@ -1,17 +1,33 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace MVCMovie.Models
 {
     public class DaiLy
     {
-         public string MaDaiLy { get; set; }
-        public string TenDaiLy { get; set; }
-        public string DiaChi { get; set; }
-        public string NguoiDaiDien { get; set; }
-        public string DienThoai { get; set; }
+        [Key]
+        [Required]
+        public string MaDaiLy { get; set; } = string.Empty;
 
-        // Khóa ngoại (tham chiếu đến HeThongPhanPhoi)
-        public string MaHTPP { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string TenDaiLy { get; set; } = string.Empty;
 
-        // Navigation property
-        public HeThongPhanPhoi HeThongPhanPhoi { get; set; }
+        [StringLength(200)]
+        public string? DiaChi { get; set; }
+
+        [StringLength(100)]
+        public string? NguoiDaiDien { get; set; }
+
+        [Phone]
+        [StringLength(20)]
+        public string? DienThoai { get; set; }
+
+        // Khóa ngoại liên kết với HeThongPhanPhoi
+        [Required]
+        public string MaHTPP { get; set; } = string.Empty;
+
+        [ForeignKey("MaHTPP")]
+        public HeThongPhanPhoi? HeThongPhanPhoi { get; set; }
     }
 }
